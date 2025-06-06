@@ -1,0 +1,24 @@
+[control]
+controller01 ansible_host=192.168.14.150 api_interface=ens8f0np0
+
+[compute]
+compute01 ansible_host=192.168.14.145 api_interface=ens15f0
+compute02 ansible_host=192.168.14.220 api_interface=vmbr0
+
+[cinder]
+controller01
+
+[monitoring]
+controller01
+
+[loadbalancer]
+controller01 ansible_host=192.168.14.150
+
+[baremetal]
+
+[all:vars]
+ansible_user=edentns
+ansible_become=true
+ansible_become_method=sudo
+ansible_become_password=[P@ssw0rd]
+ansible_ssh_private_key_file=~/.ssh/openstack
